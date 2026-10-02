@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ST Bank</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Login Page -->
+  <div id="login-page" class="login-page">
+    <h1>🏦 ST Bank</h1>
+    <input type="text" id="login-username" placeholder="Username">
+    <input type="password" id="login-password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p>Don't have an account?</p>
+    <button onclick="showCreateAccount()">Create Account</button>
+  </div>
+
+  <!-- Create Account Page -->
+  <div id="create-page" class="login-page" style="display:none;">
+    <h1>Create Account</h1>
+    <input type="text" id="new-username" placeholder="Username">
+    <input type="password" id="new-password" placeholder="Password">
+    <button onclick="createAccount()">Create Account</button>
+    <button onclick="showLogin()">Back</button>
+  </div>
+
+  <!-- Bank App -->
+  <div id="bank-app">
+    <div class="container">
+      <!-- Header -->
+      <header>
+        <h1>🏦 ST Bank</h1>
+        <p>Welcome, <span id="username"></span></p>
+      </header>
+
+      <div class="account-buttons">
+        <button onclick="logout()">Logout</button>
+      </div>
+
+      <!-- Balance Card -->
+      <section class="balance-card">
+        <h2>Current Balance</h2>
+        <h1 id="balance">$1,000.00</h1>
+        <p>Account: <span id="account-number"></span></p>
+      </section>
+
+      <!-- Banking Actions -->
+      <div class="actions">
+        <!-- Deposit -->
+        <div class="card">
+          <h2>Deposit</h2>
+          <input type="number" id="deposit-input" placeholder="Enter amount">
+          <button onclick="deposit()" id="deposit-btn">Deposit</button>
+        </div>
+
+        <!-- Withdraw -->
+        <div class="card">
+          <h2>Withdraw</h2>
+          <input type="number" id="withdraw-input" placeholder="Enter amount">
+          <button id="withdraw-btn">Withdraw</button>
+        </div>
+      </div>
+
+      <!-- Transactions -->
+      <section class="transactions">
+        <div class="transaction-header">
+          <h2>Transaction History</h2>
+          <button id="clear-history">Clear History</button>
+        </div>
+        <div id="transaction-list"></div>
+      </section>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
